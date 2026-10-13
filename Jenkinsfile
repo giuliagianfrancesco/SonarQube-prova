@@ -6,7 +6,7 @@ pipeline {
         script {
           scannerHome = tool 'sonar-scanner'
         }
-        withSonarQubeEnv(installationName: 'lab-sonar-git-prova', credentialsId: 'sonarqube-prova-token'){
+        withSonarQubeEnv(installationName: 'sonarqube-lab', credentialsId: 'sonarqube-prova-token'){
           sh "${scannerHome}/bin/sonar-scanner -Dsonar.verbose=true"
         }
       }
